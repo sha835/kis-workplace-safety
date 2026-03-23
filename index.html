@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keep It Simple Workplace Safety | CPO Certification</title>
+  <meta name="description" content="Certified Pool Operator (CPO) certification classes made simple. Online courses with flexible scheduling through Keep It Simple Workplace Safety.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,300&display=swap" rel="stylesheet">
+
+  <style>
+    /* ========== CSS VARIABLES ========== */
+    :root {
+      --navy: #0B1D3A;
+      --navy-light: #132D54;
+      --blue: #2E6DB4;
+      --blue-light: #4A90D9;
+      --sky: #E8F1FB;
+      --sky-mid: #C5DAF0;
+      --accent: #E8913A;
+      --accent-hover: #D07E2E;
+      --white: #FFFFFF;
+      --off-white: #F7F9FC;
+      --gray-100: #F0F3F7;
+      --gray-200: #D8DFE9;
+      --gray-400: #8E99A9;
+      --gray-600: #556178;
+      --gray-800: #2A3548;
+      --success: #2D8F5E;
+      --error: #C0392B;
+
+      --font-display: 'Fraunces', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+
+      --shadow-sm: 0 1px 3px rgba(11,29,58,0.08);
+      --shadow-md: 0 4px 16px rgba(11,29,58,0.10);
+      --shadow-lg: 0 8px 32px rgba(11,29,58,0.14);
+      --shadow-xl: 0 16px 48px rgba(11,29,58,0.18);
+
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-xl: 24px;
+    }
+
+    /* ========== RESET ========== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--font-body);
+      color: var(--gray-800);
+      background: var(--white);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { color: var(--blue-light); }
+
+    /* ========== UTILITIES ========== */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+
+    /* ========== NAV ========== */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(11,29,58,0.95);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav-inner {
+      max-width: 1100px; margin: 0 auto; padding: 0 24px;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 64px;
+    }
+    .nav-brand {
+      font-family: var(--font-display); font-weight: 700; font-size: 1.15rem;
+      color: var(--white); letter-spacing: -0.02em;
+    }
+    .nav-brand span { color: var(--accent); }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a {
+      color: rgba(255,255,255,0.7); font-size: 0.88rem; font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta {
+      background: var(--accent) !important; color: var(--white) !important;
+      padding: 8px 20px; border-radius: var(--radius-sm); font-weight: 600;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--accent-hover) !important; }
+    .nav-mobile-toggle {
+      display: none; background: none; border: none; cursor: pointer;
+      color: var(--white); font-size: 1.5rem; line-height: 1;
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      background: linear-gradient(165deg, var(--navy) 0%, var(--navy-light) 60%, var(--blue) 100%);
+      padding: 140px 0 100px;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -50%; right: -20%; width: 70%; height: 200%;
+      background: radial-gradient(ellipse, rgba(46,109,180,0.15) 0%, transparent 70%);
+    }
+    .hero::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0; height: 80px;
+      background: linear-gradient(to top, var(--white), transparent);
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center;
+      position: relative; z-index: 1;
+    }
+    .hero-eyebrow {
+      font-family: var(--font-body); font-weight: 600; font-size: 0.82rem;
+      text-transform: uppercase; letter-spacing: 0.15em;
+      color: var(--accent); margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-family: var(--font-display); font-weight: 700;
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      line-height: 1.15; color: var(--white); margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+    .hero p {
+      font-size: 1.1rem; color: rgba(255,255,255,0.75);
+      max-width: 480px; margin-bottom: 32px; line-height: 1.7;
+    }
+    .hero-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      background: var(--accent); color: var(--white);
+      padding: 16px 36px; border-radius: var(--radius-md);
+      font-weight: 700; font-size: 1.05rem;
+      transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+      box-shadow: 0 4px 20px rgba(232,145,58,0.35);
+    }
+    .hero-btn:hover {
+      background: var(--accent-hover); color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(232,145,58,0.45);
+    }
+    .hero-btn svg { width: 18px; height: 18px; }
+    .hero-visual {
+      display: flex; justify-content: center; align-items: center;
+    }
+    .hero-card {
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-xl);
+      padding: 40px; max-width: 380px; width: 100%;
+    }
+    .hero-card-icon {
+      width: 56px; height: 56px; background: rgba(232,145,58,0.15);
+      border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center;
+      margin-bottom: 20px;
+    }
+    .hero-card-icon svg { width: 28px; height: 28px; color: var(--accent); }
+    .hero-card h3 { color: var(--white); font-family: var(--font-display); font-weight: 500; font-size: 1.2rem; margin-bottom: 12px; }
+    .hero-card p { color: rgba(255,255,255,0.6); font-size: 0.92rem; margin-bottom: 20px; line-height: 1.6; }
+    .hero-stat-row { display: flex; gap: 24px; }
+    .hero-stat { text-align: center; }
+    .hero-stat .num { font-family: var(--font-display); font-weight: 700; font-size: 1.6rem; color: var(--accent); }
+    .hero-stat .label { font-size: 0.75rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 0.08em; margin-top: 2px; }
+
+    /* ========== SECTION SHARED ========== */
+    section { padding: 80px 0; }
+    .section-label {
+      font-family: var(--font-body); font-weight: 600; font-size: 0.8rem;
+      text-transform: uppercase; letter-spacing: 0.14em;
+      color: var(--accent); margin-bottom: 10px;
+    }
+    .section-title {
+      font-family: var(--font-display); font-weight: 700;
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      line-height: 1.2; color: var(--navy); margin-bottom: 16px;
+      letter-spacing: -0.015em;
+    }
+    .section-sub {
+      font-size: 1.05rem; color: var(--gray-600);
+      max-width: 580px; line-height: 1.7;
+    }
+
+    /* ========== ABOUT ========== */
+    .about { background: var(--white); }
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+      align-items: start; margin-top: 40px;
+    }
+    .about-text p { margin-bottom: 16px; color: var(--gray-600); line-height: 1.75; }
+    .about-features { display: flex; flex-direction: column; gap: 20px; }
+    .about-feature {
+      display: flex; gap: 16px; align-items: flex-start;
+      background: var(--off-white); padding: 20px 24px;
+      border-radius: var(--radius-md); border: 1px solid var(--gray-100);
+      transition: box-shadow 0.2s;
+    }
+    .about-feature:hover { box-shadow: var(--shadow-md); }
+    .about-feature-icon {
+      flex-shrink: 0; width: 42px; height: 42px;
+      background: var(--sky); border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .about-feature-icon svg { width: 20px; height: 20px; color: var(--blue); }
+    .about-feature h4 { font-weight: 600; font-size: 0.95rem; color: var(--navy); margin-bottom: 4px; }
+    .about-feature p { font-size: 0.88rem; color: var(--gray-600); line-height: 1.55; }
+
+    /* ========== DETAILS ========== */
+    .details { background: var(--off-white); }
+    .details-cards {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+      margin-top: 40px;
+    }
+    .detail-card {
+      background: var(--white); border-radius: var(--radius-lg);
+      padding: 32px; border: 1px solid var(--gray-200);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .detail-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .detail-card-icon {
+      width: 48px; height: 48px; border-radius: var(--radius-md);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 18px;
+    }
+    .detail-card-icon.blue { background: var(--sky); }
+    .detail-card-icon.blue svg { color: var(--blue); }
+    .detail-card-icon.orange { background: rgba(232,145,58,0.12); }
+    .detail-card-icon.orange svg { color: var(--accent); }
+    .detail-card-icon.green { background: rgba(45,143,94,0.1); }
+    .detail-card-icon.green svg { color: var(--success); }
+    .detail-card-icon svg { width: 22px; height: 22px; }
+    .detail-card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.1rem; color: var(--navy); margin-bottom: 10px; }
+    .detail-card p { font-size: 0.9rem; color: var(--gray-600); line-height: 1.65; }
+    .detail-card ul { list-style: none; margin-top: 12px; }
+    .detail-card ul li {
+      font-size: 0.88rem; color: var(--gray-600); padding: 5px 0;
+      padding-left: 20px; position: relative;
+    }
+    .detail-card ul li::before {
+      content: '✓'; position: absolute; left: 0; color: var(--success); font-weight: 700; font-size: 0.85rem;
+    }
+
+    /* ========== DATES / REGISTRATION ========== */
+    .register { background: var(--white); }
+    .register-layout {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
+      margin-top: 40px; align-items: start;
+    }
+    .dates-list { display: flex; flex-direction: column; gap: 14px; }
+    .date-card {
+      display: flex; align-items: center; gap: 16px;
+      padding: 18px 22px; background: var(--off-white);
+      border: 2px solid var(--gray-200); border-radius: var(--radius-md);
+      cursor: pointer; transition: all 0.2s; user-select: none;
+    }
+    .date-card:hover { border-color: var(--blue-light); background: var(--sky); }
+    .date-card.selected { border-color: var(--blue); background: var(--sky); }
+    .date-card.selected .date-check {
+      background: var(--blue); border-color: var(--blue);
+    }
+    .date-card.selected .date-check svg { opacity: 1; }
+    .date-check {
+      flex-shrink: 0; width: 24px; height: 24px;
+      border: 2px solid var(--gray-200); border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.2s;
+    }
+    .date-check svg { width: 14px; height: 14px; color: var(--white); opacity: 0; transition: opacity 0.15s; }
+    .date-info { flex: 1; }
+    .date-info .date-label { font-weight: 600; color: var(--navy); font-size: 0.95rem; }
+    .date-info .date-meta { font-size: 0.82rem; color: var(--gray-400); margin-top: 2px; }
+    .date-price { font-family: var(--font-display); font-weight: 700; color: var(--navy); font-size: 1.1rem; }
+    .seats-left { font-size: 0.75rem; color: var(--success); font-weight: 600; margin-top: 2px; text-align: right; }
+
+    /* Form */
+    .reg-form { display: flex; flex-direction: column; gap: 18px; }
+    .form-group label {
+      display: block; font-weight: 600; font-size: 0.85rem;
+      color: var(--navy); margin-bottom: 6px;
+    }
+    .form-group label .opt { font-weight: 400; color: var(--gray-400); }
+    .form-group input, .form-group select {
+      width: 100%; padding: 12px 16px;
+      border: 1.5px solid var(--gray-200); border-radius: var(--radius-sm);
+      font-family: var(--font-body); font-size: 0.95rem; color: var(--gray-800);
+      background: var(--white); transition: border-color 0.2s;
+    }
+    .form-group input:focus, .form-group select:focus {
+      outline: none; border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(46,109,180,0.12);
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-note {
+      font-size: 0.82rem; color: var(--gray-400); line-height: 1.5;
+      margin-top: -6px;
+    }
+
+    /* PayPal button area */
+    .paypal-section { margin-top: 8px; }
+    .paypal-placeholder {
+      background: var(--off-white); border: 2px dashed var(--gray-200);
+      border-radius: var(--radius-md); padding: 28px; text-align: center;
+    }
+    .paypal-placeholder p { font-size: 0.88rem; color: var(--gray-400); }
+    .paypal-placeholder .pp-note { font-size: 0.78rem; margin-top: 8px; }
+    .paypal-logo { font-weight: 700; font-size: 1.4rem; color: var(--navy); margin-bottom: 6px; }
+    .paypal-logo span:first-child { color: #003087; }
+    .paypal-logo span:last-child { color: #009cde; }
+
+    .order-summary {
+      background: var(--off-white); border-radius: var(--radius-md);
+      padding: 20px 24px; margin-top: 8px;
+    }
+    .order-summary h4 { font-weight: 600; font-size: 0.9rem; color: var(--navy); margin-bottom: 10px; }
+    .order-line { display: flex; justify-content: space-between; font-size: 0.88rem; padding: 4px 0; color: var(--gray-600); }
+    .order-total { display: flex; justify-content: space-between; font-weight: 700; font-size: 1rem; color: var(--navy); padding-top: 10px; margin-top: 8px; border-top: 1px solid var(--gray-200); }
+
+    /* ========== FAQ ========== */
+    .faq { background: var(--off-white); }
+    .faq-list { max-width: 720px; margin: 40px auto 0; }
+    .faq-item {
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .faq-q {
+      width: 100%; background: none; border: none; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 0; font-family: var(--font-body); font-size: 1rem;
+      font-weight: 600; color: var(--navy); text-align: left;
+    }
+    .faq-q:hover { color: var(--blue); }
+    .faq-q svg {
+      flex-shrink: 0; width: 20px; height: 20px; color: var(--gray-400);
+      transition: transform 0.3s;
+    }
+    .faq-item.open .faq-q svg { transform: rotate(180deg); }
+    .faq-a {
+      max-height: 0; overflow: hidden; transition: max-height 0.35s ease;
+    }
+    .faq-a-inner {
+      padding: 0 0 20px; font-size: 0.92rem; color: var(--gray-600); line-height: 1.7;
+    }
+    .faq-item.open .faq-a { max-height: 300px; }
+
+    /* ========== FOOTER ========== */
+    .footer {
+      background: var(--navy); color: rgba(255,255,255,0.5);
+      padding: 48px 0 32px;
+    }
+    .footer-inner {
+      display: flex; justify-content: space-between; align-items: start;
+      flex-wrap: wrap; gap: 32px;
+    }
+    .footer-brand {
+      font-family: var(--font-display); font-weight: 700; font-size: 1.1rem;
+      color: var(--white); margin-bottom: 8px;
+    }
+    .footer-brand span { color: var(--accent); }
+    .footer p { font-size: 0.85rem; line-height: 1.6; max-width: 320px; }
+    .footer-contact h4 { color: var(--white); font-weight: 600; font-size: 0.88rem; margin-bottom: 10px; }
+    .footer-contact a { color: rgba(255,255,255,0.6); font-size: 0.85rem; display: block; margin-bottom: 6px; }
+    .footer-contact a:hover { color: var(--white); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.08);
+      margin-top: 32px; padding-top: 20px;
+      font-size: 0.78rem; text-align: center;
+    }
+
+    /* ========== MOBILE ========== */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex; flex-direction: column;
+        position: absolute; top: 64px; left: 0; right: 0;
+        background: var(--navy); padding: 20px 24px; gap: 16px;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+      }
+      .nav-mobile-toggle { display: block; }
+      .hero { padding: 120px 0 70px; }
+      .hero-grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero-visual { display: none; }
+      .about-grid { grid-template-columns: 1fr; gap: 32px; }
+      .details-cards { grid-template-columns: 1fr; }
+      .register-layout { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .footer-inner { flex-direction: column; }
+    }
+
+    /* ========== ANIMATIONS ========== */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up {
+      opacity: 0; animation: fadeUp 0.6s ease forwards;
+    }
+    .fade-up-d1 { animation-delay: 0.1s; }
+    .fade-up-d2 { animation-delay: 0.2s; }
+    .fade-up-d3 { animation-delay: 0.3s; }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-brand">Keep It Simple<span>.</span></div>
+    <button class="nav-mobile-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Toggle menu">☰</button>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#details">Class Details</a>
+      <a href="#register">Dates</a>
+      <a href="#faq">FAQ</a>
+      <a href="#register" class="nav-cta">Register Now</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow fade-up">Workplace Safety Training</div>
+        <h1 class="fade-up fade-up-d1">CPO Certification,<br>Made Simple.</h1>
+        <p class="fade-up fade-up-d2">Get your Certified Pool Operator® credential through our streamlined online course. Flexible scheduling, clear instruction, nationally recognized certification.</p>
+        <a href="#register" class="hero-btn fade-up fade-up-d3">
+          Register for a Class
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="hero-visual fade-up fade-up-d2">
+        <div class="hero-card">
+          <div class="hero-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <h3>Nationally Recognized</h3>
+          <p>Pool &amp; Hot Tub Alliance certified. Accepted across all 50 states.</p>
+          <div class="hero-stat-row">
+            <div class="hero-stat">
+              <div class="num">5yr</div>
+              <div class="label">Certification</div>
+            </div>
+            <div class="hero-stat">
+              <div class="num">100%</div>
+              <div class="label">Online</div>
+            </div>
+            <div class="hero-stat">
+              <div class="num">2-Day</div>
+              <div class="label">Course</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="section-label">About the Course</div>
+    <div class="section-title">Everything You Need to Get Certified</div>
+    <div class="section-sub">The CPO® certification is the leading credential for pool and spa operators. Our course covers it all — no fluff, no confusion.</div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>The Certified Pool/Spa Operator® (CPO®) certification program is the world's leading education and certification program for pool and spa professionals, recognized by health departments across the country.</p>
+        <p>Our online course breaks down the material into clear, practical lessons. You'll learn water chemistry, filtration, maintenance, safety regulations, and facility management — everything you need to pass the exam and operate with confidence.</p>
+        <p>Whether you're a facility manager, property manager, hotel operator, or aquatics professional — this certification demonstrates competence and fulfills regulatory requirements.</p>
+      </div>
+      <div class="about-features">
+        <div class="about-feature">
+          <div class="about-feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <div>
+            <h4>100% Online</h4>
+            <p>Live instructor-led sessions via Zoom. Attend from anywhere with an internet connection.</p>
+          </div>
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div>
+            <h4>PHTA Certified</h4>
+            <p>Certification through the Pool &amp; Hot Tub Alliance, recognized nationwide.</p>
+          </div>
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div>
+            <h4>Flexible Scheduling</h4>
+            <p>Multiple class dates available. Pick the session that works best for your schedule.</p>
+          </div>
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+          </div>
+          <div>
+            <h4>Materials Included</h4>
+            <p>Course handbook and all study materials are included with registration.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DETAILS -->
+<section class="details" id="details">
+  <div class="container">
+    <div class="section-label">Class Details</div>
+    <div class="section-title">What's Included</div>
+    <div class="section-sub">One registration covers everything you need to earn your certification.</div>
+    <div class="details-cards">
+      <div class="detail-card">
+        <div class="detail-card-icon blue">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <h3>2-Day Online Course</h3>
+        <p>Live instructor-led training delivered over two days via Zoom.</p>
+        <ul>
+          <li>Interactive live sessions</li>
+          <li>Real-world examples</li>
+          <li>Q&amp;A with instructor</li>
+          <li>Practice problems</li>
+        </ul>
+      </div>
+      <div class="detail-card">
+        <div class="detail-card-icon orange">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+        </div>
+        <h3>All Materials</h3>
+        <p>Everything you need to prepare for and pass the CPO exam.</p>
+        <ul>
+          <li>Official PHTA handbook</li>
+          <li>Study guides &amp; worksheets</li>
+          <li>Reference charts</li>
+          <li>Practice exam questions</li>
+        </ul>
+      </div>
+      <div class="detail-card">
+        <div class="detail-card-icon green">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <h3>Certification Exam</h3>
+        <p>The proctored CPO® exam is administered at the end of the course.</p>
+        <ul>
+          <li>Open-book format</li>
+          <li>Proctored online</li>
+          <li>Results same day</li>
+          <li>5-year certification</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REGISTER -->
+<section class="register" id="register">
+  <div class="container">
+    <div class="section-label">Register</div>
+    <div class="section-title">Choose Your Class &amp; Sign Up</div>
+    <div class="section-sub">Select a class date, enter your information, and complete payment to reserve your seat.</div>
+    <div class="register-layout">
+      <!-- Dates -->
+      <div>
+        <h3 style="font-family:var(--font-display);font-weight:600;font-size:1.1rem;color:var(--navy);margin-bottom:16px;">Upcoming Classes</h3>
+        <div class="dates-list" id="datesList">
+          <!-- Populated by JS from config -->
+        </div>
+        <div class="order-summary" id="orderSummary" style="display:none;">
+          <h4>Order Summary</h4>
+          <div id="orderLines"></div>
+          <div class="order-total">
+            <span>Total</span>
+            <span id="orderTotal">$0</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form -->
+      <div>
+        <h3 style="font-family:var(--font-display);font-weight:600;font-size:1.1rem;color:var(--navy);margin-bottom:16px;">Your Information</h3>
+        <form class="reg-form" id="regForm" onsubmit="return false;">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" id="firstName" name="firstName" required placeholder="John">
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" id="lastName" name="lastName" required placeholder="Doe">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required placeholder="john@example.com">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" required placeholder="(555) 123-4567">
+          </div>
+          <div class="form-group">
+            <label for="company">Company / Organization <span class="opt">(optional)</span></label>
+            <input type="text" id="company" name="company" placeholder="Acme Aquatics">
+          </div>
+          <p class="form-note">Your information is only used for class registration and communication. We never share or sell your data.</p>
+
+          <div class="paypal-section">
+            <div class="paypal-placeholder" id="paypalContainer">
+              <div class="paypal-logo"><span>Pay</span><span>Pal</span></div>
+              <p>Select a class date and fill in your info above.<br>The PayPal checkout button will appear here.</p>
+              <p class="pp-note">💡 Replace this placeholder with your PayPal button embed code.</p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div style="text-align:center;">
+      <div class="section-label">FAQ</div>
+      <div class="section-title">Common Questions</div>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What is the CPO® certification?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">The Certified Pool/Spa Operator® (CPO®) certification is the leading credential for professionals who manage and maintain pools, spas, and aquatic facilities. It's issued by the Pool & Hot Tub Alliance (PHTA) and recognized by health departments across the United States.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Who should get CPO certified?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Anyone responsible for the operation and maintenance of a public or semi-public pool or spa. This includes facility managers, property managers, hotel and resort staff, municipal employees, HOA managers, aquatic directors, and maintenance personnel.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How long is the course?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">The course runs over two days with live online instruction via Zoom. The certification exam is administered at the end of the second day. Total time commitment is approximately 16 hours.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How long is the certification valid?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">The CPO® certification is valid for five years from the date you pass the exam. After that, you'll need to take a renewal course to maintain your certification.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What if I don't pass the exam?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">Don't worry — most students pass on their first attempt. The exam is open-book, and our course thoroughly prepares you for every topic covered. If you don't pass, we'll work with you to arrange a retake.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Is this course accepted by my state/county health department?
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a"><div class="faq-a-inner">The CPO® certification is the most widely accepted pool operator credential in the United States. It's recognized by health departments in all 50 states. If you have specific questions about your local requirements, feel free to contact us.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Keep It Simple<span>.</span></div>
+        <p>Workplace safety training that's clear, practical, and recognized. CPO® certification made simple.</p>
+      </div>
+      <div class="footer-contact">
+        <h4>Get in Touch</h4>
+        <a href="mailto:info@keepitsimplesafety.com">info@keepitsimplesafety.com</a>
+        <a href="tel:+1234567890">(555) 123-4567</a>
+        <a href="#">Metro Atlanta, GA</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Keep It Simple Workplace Safety, LLC. All rights reserved. CPO® is a registered trademark of the Pool &amp; Hot Tub Alliance.
+    </div>
+  </div>
+</footer>
+
+<!-- ========== JAVASCRIPT ========== -->
+<script>
+/*
+  ============================================
+  CLASS DATES CONFIGURATION
+  ============================================
+  Edit this array to add, remove, or update
+  upcoming class dates. Redeploy and you're done.
+  ============================================
+*/
+const CLASS_CONFIG = [
+  {
+    id: "cpo-2026-05-15",
+    title: "CPO® Certification — May 2026",
+    dates: "May 15–16, 2026",
+    time: "9:00 AM – 5:00 PM ET",
+    price: 300,
+    seatsLeft: 18
+  },
+  {
+    id: "cpo-2026-06-12",
+    title: "CPO® Certification — June 2026",
+    dates: "June 12–13, 2026",
+    time: "9:00 AM – 5:00 PM ET",
+    price: 300,
+    seatsLeft: 20
+  },
+  {
+    id: "cpo-2026-07-10",
+    title: "CPO® Certification — July 2026",
+    dates: "July 10–11, 2026",
+    time: "9:00 AM – 5:00 PM ET",
+    price: 300,
+    seatsLeft: 20
+  },
+  {
+    id: "cpo-2026-08-14",
+    title: "CPO® Certification — August 2026",
+    dates: "August 14–15, 2026",
+    time: "9:00 AM – 5:00 PM ET",
+    price: 300,
+    seatsLeft: 20
+  }
+];
+
+// State
+let selectedDates = new Set();
+
+// Render dates
+function renderDates() {
+  const container = document.getElementById('datesList');
+  container.innerHTML = CLASS_CONFIG.map(cls => `
+    <div class="date-card ${selectedDates.has(cls.id) ? 'selected' : ''}" onclick="toggleDate('${cls.id}')">
+      <div class="date-check">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <div class="date-info">
+        <div class="date-label">${cls.dates}</div>
+        <div class="date-meta">${cls.time} · Online via Zoom</div>
+      </div>
+      <div style="text-align:right;">
+        <div class="date-price">$${cls.price}</div>
+        <div class="seats-left">${cls.seatsLeft} seats left</div>
+      </div>
+    </div>
+  `).join('');
+  updateSummary();
+}
+
+function toggleDate(id) {
+  if (selectedDates.has(id)) {
+    selectedDates.delete(id);
+  } else {
+    selectedDates.add(id);
+  }
+  renderDates();
+}
+
+function updateSummary() {
+  const summary = document.getElementById('orderSummary');
+  const lines = document.getElementById('orderLines');
+  const total = document.getElementById('orderTotal');
+
+  if (selectedDates.size === 0) {
+    summary.style.display = 'none';
+    return;
+  }
+
+  summary.style.display = 'block';
+  let sum = 0;
+  let html = '';
+  CLASS_CONFIG.filter(c => selectedDates.has(c.id)).forEach(cls => {
+    sum += cls.price;
+    html += `<div class="order-line"><span>${cls.dates}</span><span>$${cls.price}</span></div>`;
+  });
+  lines.innerHTML = html;
+  total.textContent = `$${sum}`;
+}
+
+// FAQ toggle
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+
+// Init
+renderDates();
+</script>
+
+</body>
+</html>
